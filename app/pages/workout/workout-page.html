@@ -18,11 +18,7 @@
         </ion-row>
         <ion-row>
           <ion-col *ngFor="#r of ex.reps">
-            <div class="round-button">
-              <div class="round-button-circle">
-                <a href="#" class="round-button" (click)="initAndCountDown(r)">{{r.count}}</a>
-              </div>
-            </div>
+            <button type="button" class="btn-floating" (click)="initAndCountDown(r)">{{r.count}}</button>
           </ion-col>
         </ion-row>
       </div>
