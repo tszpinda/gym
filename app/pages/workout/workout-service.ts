@@ -25,7 +25,7 @@ export class WorkoutService {
 
          var repsList:RepResult[] = [];
          for(var j = 0; j < e.reps.length; j++){
-           var rep:RepResult = {weight: null, count: 5};
+           var rep:RepResult = {weight: e.reps[j], count: null};
            repsList.push(rep);
          }
 

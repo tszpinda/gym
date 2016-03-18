@@ -10,7 +10,7 @@ import {Result} from '../result/result';
 export class WorkoutPage implements OnInit{
   workout:Workout;
   result:Result;
-  
+
   constructor(private nav:NavController, private navParams:NavParams,private workoutService:WorkoutService){
     this.workout = navParams.get('workout');
   }
@@ -20,6 +20,17 @@ export class WorkoutPage implements OnInit{
       this.result = emptyResult;
     })
   }
+
+  initAndCountDown(rep) {
+    if(rep.count === null) {
+      rep.count = 5;
+    }else if(rep.count === 0){
+      rep.count = 5;
+    }else{
+      rep.count--;
+    }
+  }
+
   goBack() {
       this.nav.pop();
    }
