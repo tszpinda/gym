@@ -1,0 +1,29 @@
+<ion-toolbar>
+  <button (click)="goBack()" clear>
+    <ion-icon name="arrow-back"></ion-icon>Back
+  </button>
+  <ion-title>{{workout.name}}</ion-title>
+</ion-toolbar>
+<ion-content>
+
+  <ion-item>
+    <ion-label floating>Description</ion-label>
+    <ion-textarea [(ngModel)]="workout.name"></ion-textarea>
+  </ion-item>
+
+  <div *ngIf="result">
+    <div>{{result.date}}</div>
+    <div>{{result.userId}}</div>
+
+    <ul>
+      <li *ngFor="#ex of result.exercises">
+        {{ex.exercise.name}}
+        <ul>
+        <li *ngFor="#r of ex.reps">
+          c:{{r.count}} w:{{r.weight}}
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+</ion-content>

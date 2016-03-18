@@ -55,7 +55,7 @@ var COMPLETED_WORKOUTS:Result[] = [
       userId: 234,
       exercises: [
          {
-            exerciseId: 1,
+            exercise: EXERCISES[0],
             reps: [
                {count: 5, weight: 75},
                {count: 5, weight: 75},
@@ -64,7 +64,7 @@ var COMPLETED_WORKOUTS:Result[] = [
                {count: 4, weight: 75},
             ]
          },{
-            exerciseId: 2,
+            exercise: EXERCISES[1],
             reps: [
                {count: 5, weight: 95},
                {count: 5, weight: 95},
@@ -73,7 +73,7 @@ var COMPLETED_WORKOUTS:Result[] = [
                {count: 4, weight: 95},
             ]
          },{
-            exerciseId: 3,
+            exercise: EXERCISES[2],
             reps: [
                {count: 5, weight: 15},
                {count: 5, weight: 15},
@@ -90,7 +90,7 @@ var COMPLETED_WORKOUTS:Result[] = [
       userId: 234,
       exercises: [
          {
-            exerciseId: 4,
+            exercise: EXERCISES[3],
             reps: [
                {count: 5, weight: 75},
                {count: 5, weight: 75},
@@ -99,7 +99,7 @@ var COMPLETED_WORKOUTS:Result[] = [
                {count: 4, weight: 75},
             ]
          },{
-            exerciseId: 5,
+            exercise: EXERCISES[4],
             reps: [
                {count: 5, weight: 95},
                {count: 5, weight: 95},
@@ -108,7 +108,7 @@ var COMPLETED_WORKOUTS:Result[] = [
                {count: 4, weight: 95},
             ]
          },{
-            exerciseId: 6,
+            exercise: EXERCISES[5],
             reps: [
                {count: 5, weight: 15},
                {count: 5, weight: 15},

@@ -2,6 +2,7 @@ import {Page, NavController, NavParams} from 'ionic-angular';
 import {OnInit} from 'angular2/core';
 import {WorkoutService} from '../workout/workout-service';
 import {Workout} from '../workout/workout';
+import {WorkoutPage} from '../workout/workout-page';
 
 
 @Page({
@@ -15,9 +16,12 @@ export class WorkoutListPage implements OnInit {
 
   ngOnInit() {
      this.workoutService.getAvailableWorkouts().then(list => {
-        this.workouts = list
+        this.workouts = list;
      });
   }
 
+  openWorkout(workout:Workout) {
+    this.nav.push(WorkoutPage, {workout: workout}) ;
+  }
 
 }

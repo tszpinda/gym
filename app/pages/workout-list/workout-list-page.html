@@ -6,16 +6,14 @@
 </ion-navbar>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="#w of workouts" (click)="itemTapped($event, w)">
-      <ion-icon item-left></ion-icon>
-      {{w.name}}
-      <div class="item-note" item-right>
+  <ion-card  *ngFor="#w of workouts" (click)="openWorkout(w)">
+    <ion-card-content>
+      <ion-card-title>
         {{w.name}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+      </ion-card-title>
+      <p>
+        Stay motivated with great rutine every day of the week.
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

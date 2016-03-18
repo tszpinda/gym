@@ -10,7 +10,7 @@ import {WorkoutService} from './pages/workout/workout-service'
 })
 class MyApp {
   // make HelloIonicPage the root (or first) page
-  rootPage: any = HelloIonicPage;
+  rootPage: any = WorkoutListPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -23,7 +23,7 @@ class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: WorkoutListPage }
+      { title: 'Workouts', component: WorkoutListPage }
     ];
   }
 

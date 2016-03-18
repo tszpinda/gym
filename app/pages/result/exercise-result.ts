@@ -1,6 +1,7 @@
 import {RepResult} from './rep-result'
+import {Exercise} from '../exercise/exercise';
 
 export interface ExerciseResult {
-   exerciseId: number
+   exercise: Exercise
    reps: RepResult[]
 }
