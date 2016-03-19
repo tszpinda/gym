@@ -1,4 +1,4 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
+import {Page, NavController, NavParams, Alert} from 'ionic-angular';
 import {OnInit} from 'angular2/core';
 import {WorkoutService} from '../workout/workout-service';
 import {Workout} from '../workout/workout';
@@ -34,4 +34,43 @@ export class WorkoutPage implements OnInit{
   goBack() {
       this.nav.pop();
    }
+
+  testCheckboxOpen: boolean;
+  isEditMode: false;
+
+  toggleEdit() {
+    console.log(this.isEditMode);
+    this.isEditMode = !this.isEditMode;
+  }
+
+  doCheckbox(rep) {
+    var currentWeight = rep.weight;
+    let alert = Alert.create();
+    alert.setTitle('Select weight');
+
+    for (var a = currentWeight + 20; a > 0; a--) {
+
+      alert.addInput({
+        type: 'radio',
+        label: a,
+        value: a,
+        checked: a == currentWeight ? true : false
+      });
+    }
+
+    alert.addButton('Cancel');
+    alert.addButton({
+      text: 'OK',
+      handler: data => {
+        console.log('Checkbox data:', data);
+        this.testCheckboxOpen = false;
+        rep.weight = data;
+      }
+    });
+
+    this.nav.present(alert).then(() => {
+      this.testCheckboxOpen = true;
+    });
+  }
+
 }

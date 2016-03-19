@@ -1,11 +1,21 @@
 <ion-toolbar>
-  <button (click)="goBack()" clear>
+  <button large (click)="goBack()" clear>
     <ion-icon name="arrow-back"></ion-icon>Back
   </button>
   <ion-title>{{workout.name}}</ion-title>
+  <ion-buttons end>
+    <button (click)="toggleEdit()">
+      <div *ngIf="isEditMode">
+        Cancel
+      </div>
+      <div *ngIf="!isEditMode">
+        Edit
+      </div>
+    </button>
+  </ion-buttons>
 </ion-toolbar>
-<ion-content class="workout-page">
 
+<ion-content class="workout-page">
   <div *ngIf="result">
     <!--
     <div>{{result.date}}</div>
@@ -13,12 +23,13 @@
 
     <div>
       <div *ngFor="#ex of result.exercises" class="exercise">
-        <ion-row class="exercise-label">
-          {{ex.exercise.name}}
-        </ion-row>
+        <ion-list-header class="exercise-label">{{ex.exercise.name}}</ion-list-header>
         <ion-row>
-          <ion-col *ngFor="#r of ex.reps" (click)="initAndCountDown(r)">
-            <button type="button" class="btn-floating">{{r.count}}</button>
+          <ion-col *ngFor="#r of ex.reps">
+            <button large type="button" class="btn-floating" (click)="initAndCountDown(r)">{{r.count}}</button>
+            <div *ngIf="isEditMode">
+              <button large type="button" class="btn-floating" (click)="doCheckbox(r)">{{r.weight}}</button>
+            </div>
           </ion-col>
         </ion-row>
       </div>
