@@ -17,8 +17,8 @@
           {{ex.exercise.name}}
         </ion-row>
         <ion-row>
-          <ion-col *ngFor="#r of ex.reps">
-            <button type="button" class="btn-floating" (click)="initAndCountDown(r)">{{r.count}}</button>
+          <ion-col *ngFor="#r of ex.reps" (click)="initAndCountDown(r)">
+            <button type="button" class="btn-floating">{{r.count}}</button>
           </ion-col>
         </ion-row>
       </div>

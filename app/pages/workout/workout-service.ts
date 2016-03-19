@@ -22,6 +22,9 @@ export class WorkoutService {
 
        for(var i = 0; i < mockData.exercises.length; i++) {
          var e:Exercise = mockData.exercises[i];
+         if(workout.excercises.indexOf(e.id) < 0) {
+            continue;
+         }
 
          var repsList:RepResult[] = [];
          for(var j = 0; j < e.reps.length; j++){
